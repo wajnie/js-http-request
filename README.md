@@ -62,5 +62,4 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
           });
          }, 10000) // There is our timeout to let the request execute again, in milliseconds. If you want to change it for example to 5 seconds then replace it with 5000.
  ```
- 
- That was it! Be creative and find other cool api's that you can do request on! Good luck.
+After that, just node it with `node.js`. That was everything! Be creative and find other cool api's that you can do request on! Good luck.
