@@ -20,7 +20,7 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
             let betterpercent = parseFloat(percent).toFixed(2);
             if (percent > 0)
                 betterpercent = "+" + betterpercent;
-            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
+            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent}%`);
           });
 ```
 This code should show us the price of the bitcoin and how many % was it cheaper/more expensive.
@@ -43,7 +43,7 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
             if (percent > 0)
                 betterpercent = "+" + betterpercent;
 // Output, nothing to explain. We just console.log it.
-            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
+            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent}%`);
            });
 ```
 # 4. Autorefresh the price
@@ -58,7 +58,7 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
             let betterpercent = parseFloat(percent).toFixed(2);
             if (percent > 0)
                 betterpercent = "+" + betterpercent;
-            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
+            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent}%`);
           });
          }, 10000) // There is our timeout to let the request execute again, in milliseconds. If you want to change it for example to 5 seconds then replace it with 5000.
  ```
