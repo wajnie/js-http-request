@@ -44,3 +44,4 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
 // Output, nothing to explain. We just console.log it.
             console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
 ```
+And there we go! The full request is done. You can do anything you want with it, like put it on your site or set it as your game status. Of course you will need more libraries to do that.
