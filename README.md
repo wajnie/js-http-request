@@ -50,16 +50,17 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
 To do that we need to use `setInterval(function()` function, which will set the timeout to our code.
 ```js
  setInterval(function() {
-request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(error, responce, body) {
-            let value = JSON.parse(body);
-            let price = value.lastPrice;
-            let betterprice = parseFloat(price).toFixed(2);
-            let percent = value.priceChangePercent;
-            let betterpercent = parseFloat(percent).toFixed(2);
-            if (percent > 0)
-                betterpercent = "+" + betterpercent;
-            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent}%`);
-          });
-         }, 10000) // There is our timeout to let the request execute again, in milliseconds. If you want to change it for example to 5 seconds then replace it with 5000.
+    const request = require('request');
+    request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(error, responce, body) {
+        let value = JSON.parse(body);
+        let price = value.lastPrice;
+        let betterprice = parseFloat(price).toFixed(2);
+        let percent = value.priceChangePercent;
+        let betterpercent = parseFloat(percent).toFixed(2);
+        if (percent > 0)
+            betterpercent = "+" + betterpercent;
+        console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent}%`);
+    });
+}, 10000) // There is our timeout to let the request execute again, in milliseconds. If you want to change it for example to 5 seconds then replace it with 5000.
  ```
 After that, just node it with `node.js`. That was everything! Be creative and find other cool api's that you can do request on! Good luck.
