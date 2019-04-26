@@ -2,7 +2,7 @@
 Making your first http request using `request` library (which can be downloaded by running npm: `npm install request`).
 
 
-# 1. Starting with our first request
+# 1. Starting with your first request
 First we have to use an api, for this example we will use binance api. It shows the bitcoin price, and many other details about it. There is the [link](https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT) to the api.
 
 # 2. Coding
