@@ -21,6 +21,7 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
             if (percent > 0)
                 betterpercent = "+" + betterpercent;
             console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
+          });
 ```
 This code should show us the price of the bitcoin and how many % was it cheaper/more expensive.
 
@@ -43,5 +44,23 @@ request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(er
                 betterpercent = "+" + betterpercent;
 // Output, nothing to explain. We just console.log it.
             console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
+           });
 ```
-And there we go! The full request is done. You can do anything you want with it, like put it on your site or set it as your game status. Of course you will need more libraries to do that.
+# 4. Autorefresh the price
+To do that we need to use `setInterval(function()` function, which will set the timeout to our code.
+```js
+ setInterval(function() {
+request('https://api.binance.com/api/v1/ticker/24hr?symbol=BTCUSDT', function(error, responce, body) {
+            let value = JSON.parse(body);
+            let price = value.lastPrice;
+            let betterprice = parseFloat(price).toFixed(2);
+            let percent = value.priceChangePercent;
+            let betterpercent = parseFloat(percent).toFixed(2);
+            if (percent > 0)
+                betterpercent = "+" + betterpercent;
+            console.log(`The price of bitcoin is ${betterprice} $ USD, his price changed in ${betterpercent)%`);
+          });
+         }, 10000) // There is our timeout to let the request execute again, in milliseconds. If you want to change it for example to 5 seconds then replace it with 5000.
+ ```
+ 
+ That was it! Be creative and find other cool api's that you can do request on! Good luck.
